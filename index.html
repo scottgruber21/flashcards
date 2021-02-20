@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1 id="chord">Click Start</h1>
+            <label for="timeSelect">Time: </label>
+            <input type="range" id="timeSelect" name="timeSelect" min="0.5" max="10" step=".5" value='2'>
+            <output for="timeSelect" id="time-display">2</output>
+
+            <button type="submit" id="submitButton">Start</button>
+            <button type="button" id="stop">Stop</button>
+        </div>
+
+        <div class="right">
+            <div id="listItems">
+            </div>
+            <button id="del" disabled>Delete</button>
+            <button id="clear">Clear</button>
+            <form id="addItemForm">
+                <label for="addItem">Add Item</label>
+                <input type="text" id="addItem" name="addItem">
+                <button type="submit">Add</button>
+            </form>
+            <form id="addMultipleForm">
+                <label for="addMultiple">Add Item</label>
+                <textarea id="addMultiple" name="addMultiple"></textarea>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
