@@ -12,13 +12,18 @@
 <body>
     <div class="container">
         <div class="left">
-            <h1 id="chord">Click Start</h1>
-            <label for="timeSelect">Time: </label>
-            <input type="range" id="timeSelect" name="timeSelect" min="0.5" max="10" step=".5" value='2'>
-            <output for="timeSelect" id="time-display">2</output>
-
-            <button type="submit" id="submitButton">Start</button>
-            <button type="button" id="stop">Stop</button>
+            <div id="flashcard-container">
+                <h1 id="chord">Click Start</h1>
+            </div>
+            <div class="timer-container">
+                <label for="timeSelect">Time: </label>
+                <input type="range" id="timeSelect" name="timeSelect" min="0.5" max="10" step=".5" value='2'>
+                <output for="timeSelect" id="time-display">2</output>
+            </div>
+            <div id="button-container">
+                <button type="submit" id="submitButton">Start</button>
+                <button type="button" id="stop">Stop</button>
+            </div>
         </div>
 
         <div class="right">

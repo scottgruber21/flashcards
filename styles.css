@@ -1,7 +1,21 @@
+:root {
+  --main-color: yellowgreen;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: url("background.jpg");
+  color: var(--main-color);
+}
+
+#chord {
+  text-align: center;
+  font-size: 4rem;
 }
 
 .container {
@@ -11,4 +25,53 @@
 .left,
 .right {
   width: 50%;
+  padding: 0 30px;
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  padding: 0px 80px;
+  margin-top: 50px;
+}
+
+#time-display {
+  width: 60px;
+}
+
+#flashcard-container {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+#button-container button {
+  background: none;
+  font-size: 1.1rem;
+  color: var(--main-color);
+  padding: 10px 15px;
+  border: 3px solid var(--main-color);
+  border-radius: 10px;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+#button-container button:hover {
+  background: var(--main-color);
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }

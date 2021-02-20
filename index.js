@@ -20,7 +20,7 @@ function rand(max){
 }
 
 timeSelect.addEventListener('input', function(){
-    document.querySelector('#time-display').innerHTML = timeSelect.value
+    document.querySelector('#time-display').innerHTML = `${timeSelect.value}s`
 })
 
 
@@ -42,6 +42,7 @@ localStorage.setItem('arr', JSON.stringify(chordsList))
 }
 
 addEventListener('load', function(){
+    document.querySelector('#time-display').innerHTML = `${timeSelect.value}s`
     pickList();
 })
 
