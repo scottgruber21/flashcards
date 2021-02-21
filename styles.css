@@ -13,20 +13,58 @@ body {
   color: var(--main-color);
 }
 
+button:focus {
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.button-container button {
+  background: none;
+  font-size: 1.1rem;
+  color: var(--main-color);
+  padding: 10px 15px;
+  border: 3px solid var(--main-color);
+  border-radius: 10px;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+.button-container button:hover {
+  background: var(--main-color);
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* TOP SECTION */
+
+/*SLIDER*/
+
 #chord {
   text-align: center;
   font-size: 4rem;
 }
 
-.container {
+#flashcard-container {
+  height: 300px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.left,
-.right {
-  width: 50%;
-  padding: 0 30px;
+#flashcard-block {
+  display: block;
+  margin: auto;
+  width: 600px;
 }
+
+/* TIMER */
 
 .timer-container {
   display: flex;
@@ -41,37 +79,28 @@ body {
   width: 60px;
 }
 
-#flashcard-container {
-  height: 300px;
+/* BOTTOM CONTAINER */
+
+.container {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-#button-container {
-  display: flex;
-  justify-content: center;
-  padding: 30px 0;
+.left,
+.right {
+  width: 50%;
+  padding: 0 30px;
 }
 
-#button-container button {
-  background: none;
-  font-size: 1.1rem;
-  color: var(--main-color);
-  padding: 10px 15px;
-  border: 3px solid var(--main-color);
-  border-radius: 10px;
-  margin: 0 20px;
-  transition: 0.5s;
+/* CHECKBOXES */
+.checkbox-control {
+  padding: 2px 0;
 }
 
-#button-container button:hover {
-  background: var(--main-color);
-  color: white;
-  transition: 0.5s;
-  cursor: pointer;
+.checkbox-control label {
+  font-size: 1.4rem;
+  padding-left: 10px;
 }
 
-button:focus {
-  outline: none;
+#listItems {
+  padding-left: 45%;
 }

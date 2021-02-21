@@ -34,8 +34,10 @@ function timer(){
 function pickList(){
     let fullList = chordsList.map((item, index) => {
     return `
+    <div class="checkbox-control">
 <input type="checkbox" id="item-${item}" name="item-${item}" value="${item}">
-<label for="item-${item}">${item}</label><br/>`
+<label for="item-${item}">${item}</label>
+</div>`
 }).join('')
 listItems.innerHTML = fullList
 localStorage.setItem('arr', JSON.stringify(chordsList))
