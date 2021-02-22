@@ -1,5 +1,7 @@
 :root {
   --main-color: yellowgreen;
+  --header-font: "Roboto Slab", serif;
+  --main-font: font-family: 'Open Sans', sans-serif;
 }
 
 * {
@@ -11,9 +13,18 @@
 body {
   background: url("background.jpg");
   color: var(--main-color);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
-button:focus {
+button{
+    font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -47,7 +58,9 @@ button:focus {
 
 #chord {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
+  font-family: var(--header-font);
+  font-weight: 300;
 }
 
 #flashcard-container {
@@ -61,34 +74,72 @@ button:focus {
 #flashcard-block {
   display: block;
   margin: auto;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }
 
 /* TIMER */
 
 .timer-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   font-size: 2rem;
-  padding: 0px 80px;
   margin-top: 50px;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 
 #time-display {
   width: 60px;
 }
 
-/* BOTTOM CONTAINER */
+/* DROPDOWN CONTAINER */
 
-.container {
+#close,
+#edit {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: var(--header-font);
+  font-weight: 300;
+}
+
+#dropdown {
+  position: fixed;
+  background: rgb(10, 54, 105);
+  height: 0px;
+  width: 100%;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: height 0.5s;
+  z-index: 2;
+}
+
+#dropdown h1 {
+  text-align: center;
+  padding: 60px 0;
+  font-family: var(--header-font);
+  font-weight: 300;
+}
+
+#container {
   display: flex;
 }
 
-.left,
-.right {
+#left,
+#right {
   width: 50%;
   padding: 0 30px;
+}
+
+#right label {
+  display: block;
+}
+
+.form-control {
+  padding: 20px 0;
 }
 
 /* CHECKBOXES */
@@ -103,4 +154,47 @@ button:focus {
 
 #listItems {
   padding-left: 45%;
+}
+
+input[type="text"],
+textarea {
+  background: none;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button:disabled {
+  color: gray;
+  border-color: gray;
+}
+
+button:hover:disabled {
+  color: gray;
+  border-color: gray;
+  background: none;
+  cursor: not-allowed;
+}
+
+#right button {
+  padding: 5px;
+  display: block;
+  background: none;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  width: 160px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#right button:hover {
+  background: var(--main-color);
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
 }

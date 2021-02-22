@@ -10,6 +10,9 @@ const del = document.querySelector('#del')
 const clear = document.querySelector('#clear')
 const addMultipleForm = document.querySelector('#addMultipleForm')
 const addMultiple = document.querySelector('#addMultiple')
+const close = document.querySelector('#close')
+const edit = document.querySelector('#edit')
+const body = document.querySelector('body')
 
 let chordsList = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')) : []
 
@@ -112,4 +115,14 @@ addMultipleForm.addEventListener('submit', function(e){
         pickList();
         addMultiple.value=''
     }
+})
+
+close.addEventListener('click', function(){
+    document.querySelector('#dropdown').style.height = '0px';
+	body.style.overflow = 'initial';
+})
+
+edit.addEventListener('click', function(){
+    document.querySelector('#dropdown').style.height = '100%';
+    body.style.overflow = 'hidden';
 })

@@ -5,48 +5,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Slab:wght@300;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 
 <body>
     <div id="slider">
+        <div id="edit">
+            <i class="far fa-edit"></i> Edit
+        </div>
         <div id="flashcard-block">
             <div id="flashcard-container">
                 <h1 id="chord">Click Start</h1>
             </div>
         </div>
         <div class="timer-container">
-            <label for="timeSelect">Time: </label>
+            <label for="timeSelect">Interval: </label><br />
+            <span id="time-display">2</span><br />
             <input type="range" id="timeSelect" name="timeSelect" min="0.5" max="10" step=".5" value='2'>
-            <output for="timeSelect" id="time-display">2</output>
         </div>
     </div>
     <div class="button-container">
         <button type="submit" id="submitButton">Start</button>
         <button type="button" id="stop">Stop</button>
     </div>
-    <div class="container">
-        <div class="left">
-            <div id="listItems">
-            </div>
+    <div id="dropdown">
+        <h1>Add or remove items</h1>
+        <div id="close">
+            <i class="fas fa-save"></i> Save and Close
         </div>
+        <div id="container">
+            <div id="left">
+                <div class="button-container">
+                    <button id="del" disabled>Delete</button>
+                    <button id="clear">Clear</button>
+                </div>
+                <div id="listItems">
+                </div>
+            </div>
 
-        <div class="right">
-            <form id="addItemForm">
-                <label for="addItem">Add Item</label>
-                <input type="text" id="addItem" name="addItem">
-                <button type="submit">Add</button>
-            </form>
-            <form id="addMultipleForm">
-                <label for="addMultiple">Add Item</label>
-                <textarea id="addMultiple" name="addMultiple"></textarea>
-                <button type="submit">Add</button>
-            </form>
+            <div id="right">
+                <div class="form-control">
+                    <form id="addItemForm">
+                        <label for="addItem">Add Single Item</label>
+                        <input type="text" id="addItem" name="addItem">
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+                <div class="form-control">
+                    <form id="addMultipleForm">
+                        <label for="addMultiple">Add Multiple Items<br>Separate by new line or comma</label>
+                        <textarea id="addMultiple" name="addMultiple"></textarea>
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
 
-            <div class="button-container">
-                <button id="del" disabled>Delete</button>
-                <button id="clear">Clear</button>
+
             </div>
         </div>
     </div>
