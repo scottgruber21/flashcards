@@ -13,6 +13,8 @@ const addMultiple = document.querySelector('#addMultiple')
 const close = document.querySelector('#close')
 const edit = document.querySelector('#edit')
 const body = document.querySelector('body')
+const stopButton = document.querySelector('#stop')
+const dropdown = document.querySelector('#dropdown')
 
 let chordsList = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')) : []
 
@@ -23,7 +25,7 @@ function rand(max){
 }
 
 timeSelect.addEventListener('input', function(){
-    document.querySelector('#time-display').innerHTML = `${timeSelect.value}s`
+    timeDisplay.innerHTML = `${timeSelect.value}s`
 })
 
 
@@ -47,7 +49,7 @@ localStorage.setItem('arr', JSON.stringify(chordsList))
 }
 
 addEventListener('load', function(){
-    document.querySelector('#time-display').innerHTML = `${timeSelect.value}s`
+    timeDisplay.innerHTML = `${timeSelect.value}s`
     pickList();
 })
 
@@ -61,7 +63,7 @@ submitButton.addEventListener('click', function(e){
 }
 )
 
- document.querySelector('#stop').addEventListener('click', function(){
+stopButton.addEventListener('click', function(){
         clearInterval(countdown)
         submitButton.disabled = false
         timeSelect.disabled = false
@@ -100,6 +102,7 @@ del.addEventListener('click', function(){
     )
     toDelete = []
     pickList();
+    this.disabled = true;
 })
 
 clear.addEventListener('click', function(){
@@ -118,11 +121,11 @@ addMultipleForm.addEventListener('submit', function(e){
 })
 
 close.addEventListener('click', function(){
-    document.querySelector('#dropdown').style.height = '0px';
+    dropdown.style.height = '0px';
 	body.style.overflow = 'initial';
 })
 
 edit.addEventListener('click', function(){
-    document.querySelector('#dropdown').style.height = '100%';
+    dropdown.style.height = '100%';
     body.style.overflow = 'hidden';
 })

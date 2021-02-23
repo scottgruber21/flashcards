@@ -126,6 +126,7 @@ textarea:focus {
 
 #container {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 #left,
@@ -158,7 +159,7 @@ textarea:focus {
 
 input[type="text"],
 textarea {
-  background: none;
+  background-color: rgb(32, 125, 141);
   border: 2px solid var(--main-color);
   border-radius: 5px;
   color: white;
@@ -197,4 +198,30 @@ button:hover:disabled {
   color: white;
   transition: 0.5s;
   cursor: pointer;
+}
+
+#right label{
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+}
+
+@media(max-width: 575px){
+  #close, #edit{
+    display:block;
+    text-align:center;
+    padding: 20px;
+    position: static;
+  }
+  #container{
+    display:block;
+    width: 100%;
+  }
+  #left, #right{
+    display:block;
+    margin:auto;
+    width: 100%;
+  }
+  #listItems{
+    padding:0;
+  }
 }
