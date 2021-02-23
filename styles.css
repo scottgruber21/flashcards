@@ -56,11 +56,13 @@ textarea:focus {
 
 /*SLIDER*/
 
-#chord {
+.chord {
   text-align: center;
   font-size: 3rem;
   font-family: var(--header-font);
   font-weight: 300;
+  transition: 0.5s;
+  transform:translateX(0px)
 }
 
 #flashcard-container {
@@ -159,10 +161,10 @@ textarea:focus {
 
 input[type="text"],
 textarea {
-  background-color: rgb(32, 125, 141);
+  background-color: rgb(128, 141, 155);
   border: 2px solid var(--main-color);
   border-radius: 5px;
-  color: white;
+  color: black;
   padding: 5px;
 }
 
@@ -204,6 +206,7 @@ button:hover:disabled {
   font-size: 1.1rem;
   padding-bottom: 5px;
 }
+
 
 @media(max-width: 575px){
   #close, #edit{

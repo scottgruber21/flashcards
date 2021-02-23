@@ -1,7 +1,7 @@
 const submitButton = document.querySelector('#submitButton')
 const clock = document.querySelector('#clock')
 const timeSelect = document.querySelector('#timeSelect')
-const chord = document.querySelector('#chord')
+const chord = document.querySelector('.chord')
 const timeDisplay = document.querySelector('#time-display')
 const addItem = document.querySelector('#addItem')
 const addItemForm = document.querySelector('#addItemForm')
@@ -33,7 +33,15 @@ function timer(){
     let choice = chordsList.filter((item) => {
         return item != chord.textContent
     })
+    chord.style.transform = "translateX(200%)"
+    chord.innerText = ''
+    setTimeout(function(){
+    chord.style.transform = "translateX(-200%)"
     chord.innerText = choice[rand(choice.length)]
+    }, 100)
+    setTimeout(function(){
+        chord.style.transform = "translateX(0%)"
+    }, 100)
 }
 
 function pickList(){
