@@ -1,4 +1,4 @@
-const submitButton = document.querySelector('#submitButton')
+const start = document.querySelector('#startButton')
 const clock = document.querySelector('#clock')
 const timeSelect = document.querySelector('#timeSelect')
 const chord = document.querySelector('.chord')
@@ -16,7 +16,7 @@ const body = document.querySelector('body')
 const stopButton = document.querySelector('#stop')
 const dropdown = document.querySelector('#dropdown')
 
-let chordsList = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')) : []
+let chordsList = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')) : ['A Chord', 'C Chord', 'D Chord', 'E Chord', 'G Chord']
 
 let toDelete = []
 
@@ -33,14 +33,12 @@ function timer(){
     let choice = chordsList.filter((item) => {
         return item != chord.textContent
     })
-    chord.style.transform = "translateX(200%)"
-    chord.innerText = ''
+    chord.style.opacity = 0;
+    chord.style.transform = 'translateX(20px)'
     setTimeout(function(){
-    chord.style.transform = "translateX(-200%)"
-    chord.innerText = choice[rand(choice.length)]
-    }, 100)
-    setTimeout(function(){
-        chord.style.transform = "translateX(0%)"
+        chord.innerText = choice[rand(choice.length)];
+        chord.style.opacity = 1
+        chord.style.transform = 'translateX(0px)'
     }, 100)
 }
 
@@ -62,9 +60,15 @@ addEventListener('load', function(){
 })
 
 
-submitButton.addEventListener('click', function(e){
-    e.preventDefault();
-    chord.innerText = chordsList[rand(chordsList.length)]
+startButton.addEventListener('click', function(e){
+    chord.style.opacity = 0;
+    chord.style.transform = 'translateX(20px)'
+    setTimeout(function(){
+        chord.innerText = chordsList[rand(chordsList.length)];
+        chord.style.opacity = 1
+        chord.style.transform = 'translateX(0px)'
+    }, 100)
+    
     countdown = setInterval(timer, timeSelect.value * 1000)
     this.disabled = true
     timeSelect.disabled = true
@@ -73,7 +77,7 @@ submitButton.addEventListener('click', function(e){
 
 stopButton.addEventListener('click', function(){
         clearInterval(countdown)
-        submitButton.disabled = false
+        startButton.disabled = false
         timeSelect.disabled = false
         chord.innerText = 'Click Start'
     })
